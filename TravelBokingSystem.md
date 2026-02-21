@@ -127,6 +127,11 @@ INSERT INTO Payment
  ```sql
 
 SHOW TABLES;
+
+```
+## OUTPUT:
+
+```
 +-------------------------------+
 | Tables_in_travelbookingsystem |
 +-------------------------------+
@@ -144,7 +149,12 @@ SHOW TABLES;
 
 ```sql
 
-  SELECT * FROM CUSTOMER;
+ SELECT * FROM CUSTOMER;
+
+```
+## OUTPUT:
+
+```
 +-------------+--------+------------------+------------+---------+----------+
 | Customer_ID | Name   | Email            | Phone      | Address | Password |
 +-------------+--------+------------------+------------+---------+----------+
@@ -160,6 +170,11 @@ SHOW TABLES;
  ```sql
 
 SELECT * FROM AGENT;
+
+```
+## OUTPUT:
+
+```
 +----------+-------+------------------+------------+-----------------------+
 | Agent_ID | Name  | Email            | Phone      | Commission_Percentage |
 +----------+-------+------------------+------------+-----------------------+
@@ -173,6 +188,11 @@ SELECT * FROM AGENT;
  ```sql
 
 SELECT * FROM PACKAGE;
+
+```
+## OUTPUT:
+
+```
 +------------+--------------+-------------+----------+----------+------------------------+
 | Package_ID | Package_Name | Destination | Duration | Price    | Description            |
 +------------+--------------+-------------+----------+----------+------------------------+
@@ -187,6 +207,11 @@ SELECT * FROM PACKAGE;
  ```sql
 
 SELECT * FROM PAYMENT;
+
+```
+## OUTPUT:
+
+```
 +------------+------------+--------------+----------+----------------+----------------+
 | Payment_ID | Booking_ID | Payment_Date | Amount   | Payment_Method | Payment_Status |
 +------------+------------+--------------+----------+----------------+----------------+
@@ -200,6 +225,11 @@ SELECT * FROM PAYMENT;
  ```sql
 
 SELECT * FROM BOOKING;
+
+```
+## OUTPUT:
+
+```
 +------------+--------------+-------------+-------------+------------+------------------+--------------+
 | Booking_ID | Booking_Date | Travel_Date | Customer_ID | Package_ID | Number_of_People | Total_Amount |
 +------------+--------------+-------------+-------------+------------+------------------+--------------+
