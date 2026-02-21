@@ -84,7 +84,7 @@ CREATE TABLE PAYMENT (
 
  ```sql
 
-INSERT INTO Customer (Name, Email, Phone, Address, Password)
+INSERT INTO Customer 
     -> VALUES('Omika', 'omika@gmail.com', '9876543210', 'Lucknow', '12345'),
     -> ('Shreya', 'shreya@gmail.com', '9876501234', 'Delhi', 'abc123');
 ```
@@ -93,7 +93,7 @@ INSERT INTO Customer (Name, Email, Phone, Address, Password)
 
  ```sql
 
-INSERT INTO Package (Package_Name, Destination, Duration, Price, Description)
+INSERT INTO Package 
     -> VALUES('Goa Trip', 'Goa', 5, 15000.00, 'Beach vacation package'),
     -> ('Manali Tour', 'Manali', 7, 20000.00, 'Hill station package');
 ```
@@ -102,7 +102,7 @@ INSERT INTO Package (Package_Name, Destination, Duration, Price, Description)
 
  ```sql
 
-INSERT INTO Agent (Name, Email, Phone, Commission_Percentage)
+INSERT INTO Agent
     -> VALUES('Rahul', 'rahul@travel.com', '9999999999', 10.00);
 ```
 
@@ -110,7 +110,7 @@ INSERT INTO Agent (Name, Email, Phone, Commission_Percentage)
 
  ```sql
 
-INSERT INTO Booking (Booking_Date, Travel_Date, Customer_ID, Package_ID, Number_of_People, Total_Amount)
+INSERT INTO Booking 
     -> VALUES('2025-02-01', '2025-03-01', 1, 1, 2, 30000.00);
 ```
 
@@ -118,7 +118,7 @@ INSERT INTO Booking (Booking_Date, Travel_Date, Customer_ID, Package_ID, Number_
 
  ```sql
 
-INSERT INTO Payment (Booking_ID, Payment_Date, Amount, Payment_Method, Payment_Status)
+INSERT INTO Payment
     -> VALUES(1, '2025-02-02', 30000.00, 'UPI', 'Completed');
 ```
 
