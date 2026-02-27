@@ -63,7 +63,8 @@ CREATE TABLE BOOKING (
     -> Number_of_People INT,
     -> Total_Amount DECIMAL(10,2),
     -> FOREIGN KEY (Customer_ID) REFERENCES Customer(Customer_ID),
-    -> FOREIGN KEY (Package_ID) REFERENCES Package(Package_ID));
+    -> FOREIGN KEY (Package_ID) REFERENCES Package(Package_ID),
+    -> FOREIGN KEY (Agent_ID) REFERENCES Package(Agent_ID));
 ```
 
 ## CREATE TABLE PAYMENT
