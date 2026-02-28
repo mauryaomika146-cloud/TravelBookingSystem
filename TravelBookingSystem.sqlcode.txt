@@ -61,7 +61,8 @@ MariaDB [TravelBookingSystem]> CREATE TABLE BOOKING (
     -> Number_of_People INT,
     -> Total_Amount DECIMAL(10,2),
     -> FOREIGN KEY (Customer_ID) REFERENCES Customer(Customer_ID),
-    -> FOREIGN KEY (Package_ID) REFERENCES Package(Package_ID));
+    -> FOREIGN KEY (Package_ID) REFERENCES Package(Package_ID)
+    -> FOREIGN KEY (Agent_ID) REFERENCES Package(Agent_ID));
 Query OK, 0 rows affected (0.060 sec)
 
 MariaDB [TravelBookingSystem]> CREATE TABLE PAYMENT (
@@ -151,3 +152,4 @@ MariaDB [TravelBookingSystem]> SELECT * FROM BOOKING;
 |          1 | 2025-02-01   | 2025-03-01  |           1 |          1 |                2 |     30000.00 |
 +------------+--------------+-------------+-------------+------------+------------------+--------------+
 1 row in set (0.001 sec)
+
