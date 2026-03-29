@@ -56,13 +56,14 @@ MariaDB [TravelBookingSystem]> CREATE TABLE BOOKING (
     -> Booking_ID INT PRIMARY KEY AUTO_INCREMENT,
     -> Booking_Date DATE,
     -> Travel_Date DATE,
-    ->  Customer_ID INT,
+    -> Customer_ID INT,
     -> Package_ID INT,
     -> Number_of_People INT,
+    -> Agent_ID INT,
     -> Total_Amount DECIMAL(10,2),
     -> FOREIGN KEY (Customer_ID) REFERENCES Customer(Customer_ID),
     -> FOREIGN KEY (Package_ID) REFERENCES Package(Package_ID)
-    -> FOREIGN KEY (Agent_ID) REFERENCES Package(Agent_ID));
+    -> FOREIGN KEY (Agent_ID) REFERENCES Agent(Agent_ID));
 Query OK, 0 rows affected (0.060 sec)
 
 MariaDB [TravelBookingSystem]> CREATE TABLE PAYMENT (
@@ -91,8 +92,8 @@ MariaDB [TravelBookingSystem]> INSERT INTO Agent (Name, Email, Phone, Commission
     -> VALUES('Rahul', 'rahul@travel.com', '9999999999', 10.00);
 Query OK, 1 row affected (0.006 sec)
 
-MariaDB [TravelBookingSystem]> INSERT INTO Booking (Booking_Date, Travel_Date, Customer_ID, Package_ID, Number_of_People, Total_Amount)
-    -> VALUES('2025-02-01', '2025-03-01', 1, 1, 2, 30000.00);
+MariaDB [TravelBookingSystem]> INSERT INTO Booking (Booking_Date, Travel_Date, Customer_ID, Package_ID, Agent_ID, Number_of_People, Total_Amount)
+    -> VALUES('2025-02-01', '2025-03-01', 1, 1, 1, 2, 30000.00);
 Query OK, 1 row affected (0.018 sec)
 
 MariaDB [TravelBookingSystem]> INSERT INTO Payment (Booking_ID, Payment_Date, Amount, Payment_Method, Payment_Status)
@@ -146,10 +147,10 @@ MariaDB [TravelBookingSystem]> SELECT * FROM PAYMENT;
 1 row in set (0.001 sec)
 
 MariaDB [TravelBookingSystem]> SELECT * FROM BOOKING;
-+------------+--------------+-------------+-------------+------------+------------------+--------------+
-| Booking_ID | Booking_Date | Travel_Date | Customer_ID | Package_ID | Number_of_People | Total_Amount |
-+------------+--------------+-------------+-------------+------------+------------------+--------------+
-|          1 | 2025-02-01   | 2025-03-01  |           1 |          1 |                2 |     30000.00 |
-+------------+--------------+-------------+-------------+------------+------------------+--------------+
++------------+--------------+-------------+-------------+------------+----------+------------------+--------------+
+| Booking_ID | Booking_Date | Travel_Date | Customer_ID | Package_ID | Agent_ID | Number_of_People | Total_Amount |
++------------+--------------+-------------+-------------+------------+----------+------------------+--------------+
+|          1 | 2025-02-01   | 2025-03-01  |           1 |          1 |        1 |                2 |     30000.00 |
++------------+--------------+-------------+-------------+------------+----------+------------------+--------------+
 1 row in set (0.001 sec)
 
