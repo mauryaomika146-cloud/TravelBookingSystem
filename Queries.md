@@ -32,8 +32,8 @@ JOIN Booking ON Package.Package_ID = Booking.Package_ID;
 ```sql
 6. Show agent handling bookings
 SELECT Agent.Name AS Agent_Name, Booking.Booking_ID
-FROM Agent 
-JOIN Booking ON Agent.Agent_ID = Booking.Agent_ID;
+FROM Booking
+JOIN Agent ON Booking.Agent_ID = Agent.Agent_ID;
 ```
 
 ```sql
