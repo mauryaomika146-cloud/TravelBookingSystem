@@ -17,23 +17,23 @@ SELECT * FROM Booking;
 
 ```sql
 4. Show customer names with their bookings
-SELECT c.Name, b.Booking_ID, b.Travel_Date
-FROM Customer c
-JOIN Booking b ON c.Customer_ID = b.Customer_ID;
+SELECT Customer.Name, Booking.Booking_ID, Booking.Travel_Date
+FROM Customer 
+JOIN Booking ON Customer.Customer_ID = Booking.Customer_ID;
 ```
 
 ```sql
 5. Show package details with booking
-SELECT p.Package_Name, b.Booking_ID
-FROM Package p
-JOIN Booking b ON p.Package_ID = b.Package_ID;
+SELECT Package.Package_Name, Booking.Booking_ID
+FROM Package 
+JOIN Booking ON Package.Package_ID = Booking.Package_ID;
 ```
 
 ```sql
 6. Show agent handling bookings
-SELECT a.Name AS Agent_Name, b.Booking_ID
-FROM Agent a
-JOIN Booking b ON a.Agent_ID = b.Agent_ID;
+SELECT Agent.Name AS Agent_Name, Booking.Booking_ID
+FROM Agent 
+JOIN Booking ON Agent.Agent_ID = Booking.Agent_ID;
 ```
 
 ```sql
@@ -43,11 +43,11 @@ SELECT SUM(Amount) AS Total_Revenue FROM Payment;
 
 ```sql
 8. Customers who booked Goa trip
-SELECT c.Name
-FROM Customer c
-JOIN Booking b ON c.Customer_ID = b.Customer_ID
-JOIN Package p ON b.Package_ID = p.Package_ID
-WHERE p.Destination = 'Goa';
+SELECT Customer.Name
+FROM Customer 
+JOIN Booking ON Customer.Customer_ID = Booking.Customer_ID
+JOIN Package ON Booking.Package_ID = Package.Package_ID
+WHERE Package.Destination = 'Goa';
 ```
 
 ```sql
@@ -87,14 +87,12 @@ LIMIT 1;
 ```sql
 15. Show full booking details (JOIN ALL)
 SELECT 
-    c.Name AS Customer,
-    p.Package_Name,
-    a.Name AS Agent,
-    b.Travel_Date,
-    pay.Amount
-FROM Booking b
-JOIN Customer c ON b.Customer_ID = c.Customer_ID
-JOIN Package p ON b.Package_ID = p.Package_ID
-JOIN Agent a ON b.Agent_ID = a.Agent_ID
-JOIN Payment pay ON b.Booking_ID = pay.Booking_ID;
+Customer.Name,
+Package.Package_Name,
+Agent.Name AS Agent_Name,
+Booking.Total_Amount
+FROM Booking
+JOIN Customer ON Booking.Customer_ID = Customer.Customer_ID
+JOIN Package ON Booking.Package_ID = Package.Package_ID
+JOIN Agent ON Booking.Agent_ID = Agent.Agent_ID;
 ```
