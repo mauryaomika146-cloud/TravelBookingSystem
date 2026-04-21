@@ -26,6 +26,17 @@ Database Management System (DBMS)
 
 ---
 
+## Normalization
+
+The project demonstrates normalization by converting a single UNF table into multiple related tables.
+
+Initially, all data was stored in one table (UNF) causing redundancy.
+Then it was divided into Customer, Package, Agent, Booking and Payment tables.
+
+This removes duplication and ensures the database is in 3NF.
+
+---
+
 ## 🛠 Technologies Used
 - DBMS Concepts
 - SQL
