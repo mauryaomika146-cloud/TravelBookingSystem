@@ -42,7 +42,6 @@ SELECT c.Name, p.Package_Name, b.Booking_Date
     -> JOIN Customer c ON b.Customer_ID = c.Customer_ID
     -> JOIN Package p ON b.Package_ID = p.Package_ID;
 ```
-
 ## Output
 ```sql
 +-------+--------------+--------------+
@@ -51,4 +50,38 @@ SELECT c.Name, p.Package_Name, b.Booking_Date
 | Omika | Goa Trip     | 2025-02-01   |
 +-------+--------------+--------------+
 1 row in set (0.020 sec)
+```
+
+## Find total number of bookings done by each customer.
+```sql
+ELECT c.Name, COUNT(b.Booking_ID) AS Total_Bookings
+    -> FROM Customer c
+    -> JOIN Booking b ON c.Customer_ID = b.Customer_ID
+    -> GROUP BY c.Name;
+```
+
+## Output
+```sql
++-------+----------------+
+| Name  | Total_Bookings |
++-------+----------------+
+| Omika |              1 |
++-------+----------------+
+1 row in set (0.017 sec)
+```
+
+## Calculate total revenue from all bookings.
+```sql
+SELECT SUM(Total_Amount) AS Total_Revenue
+    -> FROM Booking;
+```
+
+## Output
+```sql
++---------------+
+| Total_Revenue |
++---------------+
+|      30000.00 |
++---------------+
+1 row in set (0.001 sec)
 ```
